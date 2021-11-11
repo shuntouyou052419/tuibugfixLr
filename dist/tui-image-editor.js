@@ -60033,9 +60033,6 @@ var addImageObject_command = {
   execute: function execute(graphics, imgUrl) {
     var _this = this;
 
-    console.log('------------before-------undoData-');
-    console.log(this);
-
     if (this.undoData.objectTemp) {
       graphics.add(this.undoData.objectTemp);
       return promise_default().resolve(this.undoData.objectPropsTemp);
@@ -60046,8 +60043,6 @@ var addImageObject_command = {
       _this.undoData.object = graphics.getObject(id);
       _this.undoData.objectTemp = _this.undoData.object;
       _this.undoData.objectPropsTemp = objectProps;
-      console.log('------------after-------undoData-');
-      console.log(_this);
       return objectProps;
     });
   },
